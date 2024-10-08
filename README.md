@@ -11,7 +11,7 @@ Example block scaffolded with Create Block tool.
 
 ## Description
 
-```
+```sh
 npm run playground:mount -- --blueprint=./test/e2e/blueprint.json & \
 sleep 10 && \
 echo 'Playground is ready now, lets run some end-to-end tests.' && \
@@ -28,7 +28,7 @@ npm run test:e2e:ui
 2. Running this locally in `:ui` mode fails, while the normal, headless mode fails only in webkit
     Lets run again, using:
 
-    ```
+    ```sh
     npm run playground:mount -- --blueprint=./test/e2e/blueprint.json & \
     sleep 10 && \
     echo 'Playground is ready now, lets run some end-to-end tests.' && \
@@ -38,4 +38,19 @@ npm run test:e2e:ui
 3. Running with `xvfb-run` in normal, headless mode passed in all three, also webkit !
 4. Re-Enabled `WP_HTTP_BLOCK_EXTERNAL` by accident and now know for sure, it's unrelated to the timeouts.
 5. Re-Enabled GatherPress from .org, which immediately brought back the timeout-issue. (*Not nice, but BINGO!*)
-6. 
+
+    ```sh
+    TimeoutError: locator.fill: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for frameLocator('iframe[name="editor-canvas"]').getByLabel('Add title')
+
+
+      14 |      }) => {
+      15 |              await admin.createNewPost();
+    > 16 |              await page.frameLocator('iframe[name="editor-canvas"]').getByLabel('Add title').fill('Change title to allow saving');
+         |                                                                                              ^
+    ```
+6. Try `await page.getByLabel('Add title')` without the `frameLocator` which passed. All passed! No the search for a reliable cause starts again.
+7. Cloning the test to run for `gatherpress_event` posts.
+8. 
+
