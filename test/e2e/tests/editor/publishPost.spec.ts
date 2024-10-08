@@ -18,7 +18,7 @@ test.describe('Publish posts in the Editor', () => {
 		await editor.publishPost(); // this is missing the force and doesnt work.
 		await page.reload();
 
-		await expect( await page.getByLabel('Add title') ).toHaveText('Change title to allow saving');
+		await expect( await page.frameLocator('iframe[name="editor-canvas"]').getByLabel('Add title') ).toHaveText('Change title to allow saving');
 	});
 
 });
