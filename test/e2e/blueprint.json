@@ -24,8 +24,8 @@
 		{
 			"step": "installPlugin",
 			"pluginZipFile": {
-				"resource": "wordpress.org/plugins",
-				"slug": "gatherpress"
+				"resource": "url",
+				"url": "https://github-proxy.com/proxy/?repo=GatherPress/gatherpress&branch=main"
 			},
 			"options": {
 				"activate": true
