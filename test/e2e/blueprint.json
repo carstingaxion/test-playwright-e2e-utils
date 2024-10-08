@@ -20,6 +20,16 @@
 				"WP_DEBUG_DISPLAY": false,
 				"DISABLE_WP_CRON": true
 			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginZipFile": {
+				"resource": "wordpress.org/plugins",
+				"slug": "gatherpress"
+			},
+			"options": {
+				"activate": true
+			}
 		}
 	]
 }

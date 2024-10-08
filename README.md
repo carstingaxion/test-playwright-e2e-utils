@@ -36,4 +36,6 @@ npm run test:e2e:ui
     npm run test:e2e
     ```
 3. Running with `xvfb-run` in normal, headless mode passed in all three, also webkit !
-4.
+4. Re-Enabled `WP_HTTP_BLOCK_EXTERNAL` by accident and now know for sure, it's unrelated to the timeouts.
+5. Re-Enabled GatherPress from .org, which immediately brought back the timeout-issue. (*Not nice, but BINGO!*)
+6. 
