@@ -52,4 +52,6 @@ npm run test:e2e:ui
     ```
 6. Try `await page.getByLabel('Add title')` without the `frameLocator` which passed. All passed! No the search for a reliable cause starts again.
 7. Cloning the test to run for `gatherpress_event` and venue posts, which WORKS.
+8. With the introduction of test: "An admin should be able to publish an Online-event." all following tests FAIL with error 500. (*BINGO 2*)
+9. 
 
