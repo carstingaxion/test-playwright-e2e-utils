@@ -6,6 +6,9 @@
 	"features": {
 		"networking": true
 	},
+	"constants": {
+		"WP_HTTP_BLOCK_EXTERNAL": "true"
+	},
 	"siteOptions": {
 		"permalink_structure": "/%postname%/"
 	},
